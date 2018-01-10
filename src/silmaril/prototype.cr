@@ -59,7 +59,7 @@ module Silmaril
     end
 
     private def sf_color(c : Colour) : SF::Color
-      SF::Color.new((c & 0xF00) >> 4, c & 0xF0, (c & 0xF) << 4)
+      SF::Color.new(((c & 0xF00) >> 8) * 17, ((c & 0xF0) >> 4) * 17, (c & 0xF) * 17)
     end
 
     private def handle_event(event)
