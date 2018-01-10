@@ -19,6 +19,14 @@ module Silmaril
         SF::VideoMode.new(size[0] * scale, size[1] * scale), @title)
       @window.vertical_sync_enabled = true
       @frame = 0
+      setup
+      run
+    end
+
+    def setup
+    end
+
+    def update
     end
 
     def run
@@ -27,6 +35,7 @@ module Silmaril
           handle_event event
         end
 
+        update
         window.clear sf_color(@bgcol)
         draw
         window.display
