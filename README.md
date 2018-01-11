@@ -1,3 +1,3 @@
 ![Logo](https://raw.githubusercontent.com/lhz/silmaril/master/silmaril.png "Silmaril")
-# silmaril
+# Silmaril
 Amiga development tools written in Crystal
