@@ -19,6 +19,7 @@ module Silmaril
         SF::VideoMode.new(size[0] * scale, size[1] * scale), @title)
       @window.vertical_sync_enabled = true
       @frame = 0
+      @autostep = true
       setup
       run
     end
@@ -40,7 +41,7 @@ module Silmaril
         draw
         window.display
 
-        @frame += 1
+        @frame += 1 if @autostep
       end
     end
 
@@ -70,6 +71,12 @@ module Silmaril
         case event.code
         when SF::Keyboard::Escape
           window.close
+        when SF::Keyboard::Space
+          @autostep = !@autostep
+        when SF::Keyboard::Left
+          @frame -= 1 unless @autostep
+        when SF::Keyboard::Right
+          @frame += 1 unless @autostep
         end
       end
     end
