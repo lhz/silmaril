@@ -6,10 +6,11 @@ authors:
 
 dependencies:
   crsfml:
-    github: blaxpirit/crsfml
+    github: oprypin/crsfml
+    version: 2.4.10
   stumpy_png:
     github: l3kn/stumpy_png
 
-crystal: 0.23.1
+crystal: 0.24.1
 
 license: MIT
