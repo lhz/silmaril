@@ -59,6 +59,13 @@ module Silmaril
       window.draw rect
     end
 
+    def circle(at : Point, radius : Float64, col : Colour)
+      c = SF::CircleShape.new(radius * scale)
+      c.position = {at[0] * scale, at[1] * scale}
+      c.fill_color = sf_color(col)
+      window.draw c
+    end
+
     private def sf_color(c : Colour) : SF::Color
       SF::Color.new(((c & 0xF00) >> 8) * 17, ((c & 0xF0) >> 4) * 17, (c & 0xF) * 17)
     end
